@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Roll | Dietruth{% endblock %}
+
+{% block content %}
+
+<div>
+    <h1>{{ roll.query }}:</h1>
+    <ul>
+        {% for die in formatted_dice %}
+        <li><h2>{{ die }}</h2></li>
+        {% endfor %}
+    </ul>
+</div>
+
+{% if roll.signature %}
+<p>Signature {{ roll.signature }}</p>
+<p>Data {{ roll.randomdata }}</p>
+{% endif %}
+
+{% endblock %}

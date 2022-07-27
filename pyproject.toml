@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "dietruth"
+version = "0.1.0"
+description = ""
+authors = ["Gabriel Lopes Veiga <gabriellopvei@gmail.com>"]
+packages = [
+         { include = "project" }
+]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+Django = "^4.0.6"
+psycopg2 = "^2.9.3"
+python-dotenv = "^0.20.0"
+whitenoise = "^6.2.0"
+requests = "^2.28.1"
+gunicorn = "^20.1.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+black = "^22.6.0"
+pyflakes = "^2.4.0"
+isort = "^5.10.1"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
