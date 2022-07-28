@@ -1,1 +1,1 @@
-web: gunicorn --pythonpath project dietruth.wsgi
+web: run.sh
