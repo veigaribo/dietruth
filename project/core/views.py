@@ -7,11 +7,12 @@ from core.forms import RollForm
 from core.roll.parse import RollDescriptor
 from core.roll.rpc import perform
 from core.roll.roll import format_result, make_roll
-from core.util import get_session
+from core.util import get_session, orm
 
 
 def home(request: HttpRequest) -> HttpResponse:
-    return render(request, "core/home.html")
+    rolls = orm(Roll).all()
+    return render(request, "core/home.html", {"rolls": rolls})
 
 
 @login_required()

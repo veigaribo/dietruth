@@ -4,6 +4,12 @@
 
 {% block content %}
 
-<p>Home</p>
+<h1>All rolls</h1>
+
+<ul>
+    {% for roll in rolls %}
+    <li><a href="{% url 'get_roll' roll.id %}">{{ roll.query }} | {{ roll.created_at | date }}</a></li>
+    {% endfor %}
+</ul>
 
 {% endblock %}
