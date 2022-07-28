@@ -21,7 +21,8 @@ To run the application, you must set the following environment variables:
 - `DATABASE_PASSWORD`: Password to use for database authentication;
 - `DATABASE_HOST`: Hostname of the PostgreSQL database to use;
 - `DATABASE_PORT`: TCP port of the PostgreSQL database to use;
-- `RANDOM_ORG_KEY`: API Key of [random.org](https://www.random.org/). Access to the signed API is preferred but not required.
+- `RANDOM_ORG_KEY`: API Key of [random.org](https://www.random.org/). Access to the signed API is preferred but not required;
+- `ALLOWED_HOSTS`: Mandatory only if DEBUG is false. The server will only respond if accessed through a hostname that matches this. See <https://docs.djangoproject.com/en/4.0/ref/settings/#allowed-hosts>.
 
 Aditionally, the following are also available:
 - `RANDOM_ORG_SIGN`: If set to `1`, will use the signed [random.org](https://www.random.org/) API. Will use the unsigned one otherwise;
