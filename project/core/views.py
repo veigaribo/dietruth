@@ -9,8 +9,6 @@ from core.roll.rpc import perform
 from core.roll.roll import format_result, make_roll
 from core.util import get_session
 
-# Create your views here.
-
 
 def home(request: HttpRequest) -> HttpResponse:
     return render(request, "core/home.html")
@@ -30,10 +28,14 @@ def do_roll(request: HttpRequest) -> HttpResponse:
 
         return redirect("get_roll", id=roll.id, permanent=True)
 
-    # see ./context_processors.py
-    get_session(request)["last_query"] = request.POST["query"]
-    current_page = form.cleaned_data["current_page"]
-    return redirect(current_page, permanent=True)
+    session = get_session(request)
+
+    if form.errors:
+        session["roll_errors"] = form.errors.as_json()
+
+    # see ./middlewares.py
+    previous_url = session["previous_url"]
+    return redirect(previous_url, permanent=True)
 
 
 def get_roll(request: HttpRequest, id: str) -> HttpResponse:

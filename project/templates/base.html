@@ -27,6 +27,21 @@
             {% csrf_token %}
 
             <table>
+                {% if roll_errors %}
+                <tr>
+                    <th>Errors</th>
+                    <td>
+                        <ul>
+                            {% for errors in roll_errors.values %}
+                            {% for error in errors %}
+                            <li>{{ error.message }}</li>
+                            {% endfor %}
+                            {% endfor %}
+                        </ul>
+                    </td>
+                </tr>
+                {% endif %}
+
                 {{ roll_form }}
             </table>
 

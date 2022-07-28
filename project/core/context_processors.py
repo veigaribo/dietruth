@@ -1,18 +1,17 @@
+import json
 from django.http import HttpRequest
 from core.forms import RollForm
 from core.util import get_session
 
 
 def roll_form(request: HttpRequest) -> dict:
-    session = get_session(request)
     data = {}
+    session = get_session(request)
 
-    try:
-        data["query"] = session.pop("last_query")
-    except KeyError:
-        pass
+    if "roll_errors" in session:
+        data["roll_errors"] = json.loads(session.pop("roll_errors"))
+    else:
+        data["roll_errors"] = {}
 
-    data["current_page"] = request.build_absolute_uri()
-    form = RollForm(data)
-
-    return {"roll_form": form}
+    data["roll_form"] = RollForm()
+    return data
