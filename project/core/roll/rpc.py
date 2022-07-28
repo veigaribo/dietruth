@@ -42,7 +42,7 @@ def make_payload_params(descriptor: RollDescriptor) -> RandomOrgSignedRpcParams:
 def make_payload(descriptor: RollDescriptor) -> RandomOrgSignedRpcPayload:
     return {
         "jsonrpc": "2.0",
-        "method": "generateSignedIntegerSequences",
+        "method": get_method(),
         "params": make_payload_params(descriptor),
         "id": 1,  # gonna be using HTTP so doesnt really matter
     }
