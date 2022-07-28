@@ -38,4 +38,4 @@ Then run the application either by using `python manage.py runserver` or [gunico
 
 ## Motivation
 
-I made this to help with asynchronous RPGs (e.g. <https://en.wikipedia.org/wiki/Play-by-post_role-playing_game>) and whatnot.
+I made this to help with asynchronous RPGs (i.e. <https://en.wikipedia.org/wiki/Play-by-post_role-playing_game>) and whatnot.
