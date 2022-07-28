@@ -16,11 +16,7 @@ First thing you'll probably want to do is installing the dependencies with `poet
 
 To run the application, you must set the following environment variables:
 - `SECRET_KEY`: Secret value used for signing and stuff by Django. See <https://docs.djangoproject.com/en/4.0/ref/settings/#secret-key>;
-- `DATABASE_NAME`: Name of the PostgreSQL database to use;
-- `DATABASE_USER`: Username to use for database authentication;
-- `DATABASE_PASSWORD`: Password to use for database authentication;
-- `DATABASE_HOST`: Hostname of the PostgreSQL database to use;
-- `DATABASE_PORT`: TCP port of the PostgreSQL database to use;
+- `DATABASE_URL`: URL of the database to connect to. See <https://github.com/kennethreitz/dj-database-url>;
 - `RANDOM_ORG_KEY`: API Key of [random.org](https://www.random.org/). Access to the signed API is preferred but not required;
 - `ALLOWED_HOSTS`: Mandatory only if DEBUG is false. The server will only respond if accessed through a hostname that matches this. See <https://docs.djangoproject.com/en/4.0/ref/settings/#allowed-hosts>.
 
@@ -34,7 +30,7 @@ When using `manage.py`, you can also use a `.env` file. <https://pypi.org/projec
 
  (`manage.py` is inside the `project` directory)
 
-You will have to apply the database migrations. Do that by running `python manage.py migrate` with the proper database environment variables. <https://docs.djangoproject.com/en/4.0/topics/migrations/#the-commands>.
+You will have to apply the database migrations. Do that by running `python manage.py migrate` with the proper database environment variable. <https://docs.djangoproject.com/en/4.0/topics/migrations/#the-commands>.
 
 Also, to be able to roll, you will need to create a user. Do that by running `python manage.py createsuperuser` while having the database set up. <https://docs.djangoproject.com/en/4.0/topics/auth/default/#creating-superusers>.
  
