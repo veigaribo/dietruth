@@ -4,6 +4,7 @@ from django.db import models
 
 class Roll(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    description = models.CharField(max_length=280, blank=True)
 
     # "1d20", "6d6", "1d20+2"
     query = models.CharField(max_length=60)

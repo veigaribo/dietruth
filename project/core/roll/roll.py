@@ -2,12 +2,13 @@ from core.roll.parse import RollDescriptor, RollResult
 from core.models import Roll
 
 
-def make_roll(descriptor: RollDescriptor, result: RollResult):
+def make_roll(descriptor: RollDescriptor, result: RollResult, description: str):
     query = descriptor.get_query()
     result_str = ";".join([str(die) for die in result.dice])
 
     return Roll(
         query=query,
+        description=description,
         result=result_str,
         modifier=result.modifier,
         signature=result.signature,

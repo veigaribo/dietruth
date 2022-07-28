@@ -21,10 +21,11 @@ def do_roll(request: HttpRequest) -> HttpResponse:
     form = RollForm(request.POST)
 
     if form.is_valid():
+        description = form.cleaned_data["description"]
         descriptor = cast(RollDescriptor, form.cleaned_data["query"])
         result = perform(descriptor)
 
-        roll = make_roll(descriptor, result)
+        roll = make_roll(descriptor, result, description)
         roll.save()
 
         return redirect("get_roll", id=roll.id, permanent=True)

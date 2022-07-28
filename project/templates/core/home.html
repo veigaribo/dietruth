@@ -8,7 +8,9 @@
 
 <ul>
     {% for roll in rolls %}
-    <li><a href="{% url 'get_roll' roll.id %}">{{ roll.query }} | {{ roll.created_at | date }}</a></li>
+    <li><a href="{% url 'get_roll' roll.id %}">
+        {% if roll.description %}<b>{{ roll.description }}</b>:{% endif %}
+        {{ roll.query }} | {{ roll.created_at | date }}</a></li>
     {% endfor %}
 </ul>
 

@@ -64,3 +64,4 @@ class CurrentPageField(forms.URLField):
 
 class RollForm(forms.Form):
     query = RollQueryField(label="Query", max_length=60)
+    description = forms.CharField(max_length=280, required=False)
