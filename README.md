@@ -6,6 +6,8 @@ Uses [random.org](https://www.random.org/) to generate random values.
 
 The syntax to roll is `<quantity>d<sides><modifier>`, where quantity is an optional number describing how many dice to roll, sides is a mandatory number describing how many faces the dice is supposed to have, and modifier is either `+<number>` or `-<number>`, and is a number that will be added or subtracted from each result. The modifier is also optional.
 
+Example: `4d10+2` will roll 4 10 sided dice and add 2 to the result of each one.
+
 Rolling multiple kinds of dice at once and/or utilizing multiple modifiers is intentionally not supported.
 
 To roll, you must have an account. There is no interface for registration, however, so see the ["How to use"](#how-to-use) section.
