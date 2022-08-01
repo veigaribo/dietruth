@@ -14,7 +14,7 @@ To roll, you must have an account. There is no interface for registration, howev
 
 ## How to use
 
-First thing you'll probably want to do is installing the dependencies with `poetry install`. <https://python-poetry.org/docs/master/cli/#install>.
+First thing you'll probably want to do is installing the dependencies with `poetry install`: <https://python-poetry.org/docs/master/cli/#install>, then activating it's shell through `poetry shell`: <https://python-poetry.org/docs/master/cli/#shell>.
 
 To run the application, you must set the following environment variables:
 - `SECRET_KEY`: Secret value used for signing and stuff by Django. See <https://docs.djangoproject.com/en/4.0/ref/settings/#secret-key>;
